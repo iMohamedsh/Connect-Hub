@@ -10,5 +10,6 @@ public class PasswordHash {
         MessageDigest MD = MessageDigest.getInstance("SHA-256");
         byte[] hashedBytes = MD.digest(password.getBytes());
         return Base64.getEncoder().encodeToString(hashedBytes);
+        
     }
 }
