@@ -1,31 +1,59 @@
-[{
-   "stories": [],
-   "blocked": [],
-   "groups": [{
-      "creator": "j",
+[
+   {
       "stories": [],
-      "members": [],
-      "name": "mm",
-      "description": "",
-      "requests": [],
+      "blocked": [],
+      "groups": [{
+         "creator": "j",
+         "stories": [],
+         "members": [],
+         "name": "mm",
+         "description": "",
+         "requests": [],
+         "posts": [],
+         "picture": "javax.swing.ImageIcon@667d6b5e",
+         "admins": []
+      }],
+      "receivedfriends": [],
+      "blockedBY": [],
+      "sentfriends": [],
       "posts": [],
-      "picture": "javax.swing.ImageIcon@667d6b5e",
-      "admins": []
-   }],
-   "receivedfriends": [],
-   "blockedBY": [],
-   "sentfriends": [],
-   "posts": [],
-   "userid": "0001",
-   "friends": [],
-   "info": [{
-      "password": "a4ayc/80/OGda4BO/1o/V0etpOqiLx1JwB5S3beHW0s=",
-      "coverimg": "ImagesDatabase//Default//cover.jpg",
-      "dob": "1991-01-01",
-      "bio": "",
-      "profileimg": "ImagesDatabase//Default//profile.png",
-      "email": "w@k.c",
-      "username": "j",
-      "status": "OFFLINE"
-   }]
-}]
+      "userid": "0001",
+      "friends": ["k"],
+      "info": [{
+         "password": "a4ayc/80/OGda4BO/1o/V0etpOqiLx1JwB5S3beHW0s=",
+         "coverimg": "ImagesDatabase//Default//cover.jpg",
+         "dob": "1991-01-01",
+         "bio": "",
+         "profileimg": "ImagesDatabase//Default//profile.png",
+         "email": "w@k.c",
+         "username": "j",
+         "status": "OFFLINE"
+      }]
+   },
+   {
+      "stories": [],
+      "blocked": [],
+      "groups": [],
+      "receivedfriends": [],
+      "blockedBY": [],
+      "sentfriends": [],
+      "posts": [{
+         "path": "ImagesDatabase\\Content\\0001-0002.png",
+         "AuthorID": "0002",
+         "caption": "jj",
+         "timestamp": "2024-12-12T16:21:35.715875700"
+      }],
+      "userid": "0002",
+      "friends": ["j"],
+      "info": [{
+         "password": "a4ayc/80/OGda4BO/1o/V0etpOqiLx1JwB5S3beHW0s=",
+         "coverimg": "ImagesDatabase//Default//cover.jpg",
+         "dob": "1997-01-01",
+         "bio": "",
+         "profileimg": "ImagesDatabase//Default//profile.png",
+         "email": "k@m.co",
+         "username": "k",
+         "status": "OFFLINE"
+      }]
+   }
+]

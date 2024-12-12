@@ -4,7 +4,9 @@ import frontend.groups.test;
 import Backend.Account.Account;
 import Backend.Authentication.Register;
 import Backend.Databases.Databases;
+import Backend.Feed.Group;
 import frontend.friends.FriendsManagement;
+import frontend.groups.GroupPage;
 import frontend.groups.GroupsManagement;
 import frontend.settings.Settings;
 import javax.swing.DefaultListModel;
@@ -23,6 +25,13 @@ public class Home extends javax.swing.JFrame {
         this.acc = acc;
 
         DefaultListModel<String> newsFeedModel = new DefaultListModel<>(); // Initialize DefaultListModel
+        for (int i = 0; i < Group.getGroups().size(); i++) {
+            if (Group.getGroups().get(i).isMember(acc.getUsername()) || Group.getGroups().get(i).getCreator().getUsername().equals(acc.getUsername())) {
+                String listItem = String.format("%s~%s", "Group", Group.getGroups().get(i).getName());
+                newsFeedModel.addElement(listItem);
+            }
+        }
+
         for (int i = 0; i < acc.getFriendsManagement().getFriends().size(); i++) {
             String friendUsername = acc.getFriendsManagement().getFriends().get(i).getUsername();
             for (int j = 0; j < acc.getFriendsManagement().getFriends().get(i).getContentManagement().getContent().size(); j++) {
@@ -31,7 +40,7 @@ public class Home extends javax.swing.JFrame {
                 String text = (String) acc.getFriendsManagement().getFriends().get(i).getContentManagement().getContent().get(j).getContentMap().get("Text");
                 String path = (String) acc.getFriendsManagement().getFriends().get(i).getContentManagement().getContent().get(j).getContentMap().get("Path");
                 // Format the data for display
-                String listItem = String.format("%s~%s~%s~%s", friendUsername, time, text != null ? text : "No Text", path != null ? path : "No Path");
+                String listItem = String.format("%s~%s~%s~%s~%s", "Content", friendUsername, time, text != null ? text : "No Text", path != null ? path : "No Path");
                 // Add the formatted string to the DefaultListModel
                 newsFeedModel.addElement(listItem);
             }
@@ -203,8 +212,15 @@ public class Home extends javax.swing.JFrame {
         } else {
             String line = newsFeed.getSelectedValue();
             String[] temp = line.split("~");
-            DisplayContent c = new DisplayContent(acc, temp);
-            c.setVisible(true);
+                if (temp[0].equals("Group")) {
+                GroupPage gp = new GroupPage(acc, Database.getGroup(temp[1]));
+                gp.setVisible(true);
+                this.setVisible(false);
+            }
+            if (temp[0].equals("Content")) {
+                DisplayContent c = new DisplayContent(acc, temp);
+                c.setVisible(true);
+            }
         }
     }//GEN-LAST:event_ViewActionPerformed
 
@@ -248,7 +264,7 @@ public class Home extends javax.swing.JFrame {
         Database.read();
         GroupsManagement g = new GroupsManagement(acc);
         g.setVisible(true);
-         this.setVisible(false);
+        this.setVisible(false);
         ///////////////////////////////////////////////
         /*test t = new test(acc);
         t.setVisible(true);

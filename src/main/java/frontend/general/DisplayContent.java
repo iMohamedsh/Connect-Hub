@@ -14,9 +14,9 @@ public class DisplayContent extends javax.swing.JFrame {
         setResizable(false);
         this.acc = acc;
         this.temp = temp;
-        Time.setText(temp[1]);
-        Content.setIcon(new ImageIcon(temp[3]));
-        Caption.setText(temp[2]);
+        Time.setText(temp[2]);
+        Content.setIcon(new ImageIcon(temp[4]));
+        Caption.setText(temp[3]);
     }
 
     @SuppressWarnings("unchecked")
